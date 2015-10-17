@@ -6,7 +6,7 @@ public class Queue<T> {
 	    int maxSize;
 
 	    private static class Node<T> {
-	        private T T;
+	        private T data;
 	        private Node<T> next;
 	     
 	    }
@@ -34,13 +34,13 @@ public class Queue<T> {
 
 	 
 	    public T top() {
-	        return first.T;
+	        return first.data;
 	    }
 
-	    public void enqueue(T T) {
+	    public void enqueue(T data) {
 	        Node<T> oldlast = last;
 	        last = new Node<T>();
-	        last.T = T;
+	        last.data = data;
 	        last.next = null;
 	        if (isEmpty()) 
 	        	first = last;
@@ -53,7 +53,7 @@ public class Queue<T> {
 	    }
 	    public T dequeue() {
 	        if (!isEmpty()){ 
-	            T item = first.T;
+	            T item = first.data;
 	            first = first.next;
 	            N--;
 	            if (isEmpty()) last = null;   // to avoid loitering
